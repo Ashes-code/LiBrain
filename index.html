@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Discover a world of stories at LiBrain Bookstore.">
+        <title>LiBrain</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(to right, #38b2ac, #f6ad55, #4299e1);
+        }
+        .gradient-bg2 {
+            background: linear-gradient(to left, #38b2ac, #f6ad55, #4299e1);
+        }
+        #search{
+            width: 300px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: #fff;
+            padding: 0 10px;
+            font-size: 14px;
+            outline: linear-gradient(to right, #38b2ac, #f6ad55, #4299e1);
+            color: black;
+        }
+        .search-btn{
+            margin-left: 10px;
+            cursor: pointer;
+            background-color: transparent;
+            color: #fff;
+            padding: 6px 6px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 0 0 1px #fff;
+        }
+        .search-btn:hover{
+            color: blue;
+            box-shadow: 0 0 0 1px blue;
+        }
+        #cart{
+          height: 45px;
+          position: fixed;
+          right: 0;
+          box-shadow: 0 0 0 3px #38b2ac;
+          border-radius: 12px;
+        }
+        .cart-div{
+          position: relative;
+        }
+    </style>
+    <body class="gradient-bg2">
+
+        <header class="gradient-bg text-white px-4 shadow-xl">
+            <div class="container mx-auto flex flex-col lg:flex-row justify-center lg:justify-between items-center">
+                <div class="flex">
+                    <a href="#" class="text-3xl font-bold name items-center flex transition hover:text-blue-900">
+                    <img src="img/Book-logo-removebg-preview.png" alt="LiBrain Logo" class="h-16 lg:h-24">
+                    LiBrain</a>
+                </div>
+                <div class="mb-3 lg-mb-0 space-y-3 lg:space-y-0">
+                    <input type="text" id="search" placeholder="Search LiBrain for books...">
+                    <button class="search-btn" id="search-button">Search</button>
+                  </div>
+                <nav>
+                    <ul class="flex space-x-4 pb-2 lg:mb-0">
+                        <li><a href="#" class="underline transition-all font-medium lg:font-bold text-md lg:text-xl text-blue-900">Home</a></li>
+                        <li><a href="about.html" class="hover:underline hover:underline-offset-4 transition-all font-medium lg:font-bold text-md lg:text-xl hover:text-blue-900">About</a></li>
+                        <li><a href="books.html" class="hover:underline hover:underline-offset-4 transition-all font-medium lg:font-bold text-md lg:text-xl hover:text-blue-900">Our Books</a></li>
+                        <li><a href="contact.html" class="hover:underline hover:underline-offset-4 transition-all font-medium lg:font-bold text-md lg:text-xl hover:text-blue-900">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="cart-div">
+            <a href="cart.html" onclick="displayCartItems()"><img src="img/cart.png" alt="cart" id="cart"></a>
+          </div>
+
+         <div class="text-center px-5 py-14 my-5 lg:my-28 welcome">
+            <h2 class="text-white text-5xl font-bold mb-8">Welcome to LiBrain Bookstore!</h2>
+            <p class="text-white text-xl mb-10">Discover a world of stories waiting for you.</p>
+            <a href="books.html" class="bg-white text-blue-600 hover:bg-gray-200 font-bold py-2 px-4 rounded transition duration-300">Explore Our Collection</a>
+        </div>
+
+        <main class="container mx-auto p-4">
+            <h2 class="text-4xl font-bold mt-12 text-center text-white"><a href="index.html">Featured Books</a></h2>
+            <h2 class="text-xl font-bold text-center text-white">Our Reader's Choice:</h2>
+            <h2 class="text-xl font-bold text-center text-white mb-12">Visit Our Books Page for our Available Books</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/harry.png" alt="Harry Potter and the Philosopher's Stone Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Harry Potter and the Philosopher's Stone</h3>
+                        <p class="text-gray-900 mb-4">Author: J.K. Rowling</p>
+                        <p class="text-gray-900 text-sm mb-2">Price: $9.99</p>
+                        <p class="text-gray-600 text-sm mb-8">Join young Harry Potter as he discovers he is a wizard and embarks on an enchanting journey at Hogwarts School of Witchcraft and Wizardry.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+        
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/rings.png" alt="The Lord of the Rings Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">The Lord of the Rings</h3>
+                        <p class="text-gray-900 mb-4">Author: J.R.R. Tolkien</p>
+                        <p class="text-gray-900 text-sm mb-2">Price: $14.99</p>
+                        <p class="text-gray-600 text-sm mb-8">Follow Frodo Baggins as he embarks on a perilous journey to destroy the One Ring and save Middle-earth.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+        
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/hunger.png" alt="The Hunger Games Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">The Hunger Games</h3>
+                        <p class="text-gray-900 mb-4">Author: Suzanne Collins</p>
+                        <p class="text-gray-900 text-sm mb-2">Price: $12.99</p>
+                        <p class="text-gray-600 text-sm mb-8">The Hunger Games follows Katniss Everdeen, who volunteers to take her sister's place in a deadly competition where children fight to the death for survival.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+        
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/catcher.png" alt="The Catcher in the Rye Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">The Catcher in the Rye</h3>
+                        <p class="text-gray-900 mb-4">Author: J.D. Salinger</p>
+                        <p class="text-gray-900 text-sm mb-2">Price: $10.99</p>
+                        <p class="text-gray-600 text-sm mb-8">A teenager's journey through New York City as he grapples with issues of identity and belonging.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+        
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/mockingbird.png" alt="To Kill a Mockingbird Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">To Kill a Mockingbird</h3>
+                        <p class="text-gray-900 mb-4">Author: Harper Lee</p>
+                        <p class="text-gray-900 text-sm mb-2">Price: $8.99</p>
+                        <p class="text-gray-600 text-sm mb-8">A poignant exploration of racial injustice in the Deep South, seen through the eyes of a child.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+        
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/1984.png" alt="1984 Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">1984</h3>
+                        <p class="text-gray-900 mb-4">Author: George Orwell</p>
+                        <p class="text-gray-900 text-sm mb-2">Price: $11.99</p>
+                        <p class="text-gray-600 text-sm mb-8">A chilling portrayal of a totalitarian regime that uses surveillance and censorship to control its citizens.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+        
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/gatsby.png" alt="The Great Gatsby Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">The Great Gatsby</h3>
+                        <p class="text-gray-900 mb-4">Author: F. Scott Fitzgerald</p>
+                        <p class="text-gray-900 text-sm mb-2">Price: $7.99</p>
+                        <p class="text-gray-600 text-sm mb-8">A tragic love story set against the backdrop of the Roaring Twenties, exploring themes of wealth and disillusionment.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+        
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/pride.png" alt="Pride and Prejudice Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Pride and Prejudice</h3>
+                        <p class="text-gray-900 mb-4">Author: Jane Austen</p>
+                        <p class="text-gray-900 text-sm mb-2">Price: $6.99</p>
+                        <p class="text-gray-600 text-sm mb-8">A witty exploration of love and social class in 19th century England, centered around the spirited Elizabeth Bennet.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+        
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/dorian.png" alt="The Picture of Dorian Gray Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">The Picture of Dorian Gray</h3>
+                        <p class="text-gray-900 mb-4">Author: Oscar Wilde</p>
+                        <p class="text-gray-900 text-sm mb-2">Price: $10.49</p>
+                        <p class="text-gray-600 text-sm mb-8">A haunting tale of vanity and moral corruption, where a portrait bears the consequences of a young man's actions.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/wuthering.png" alt="Wuthering Heights Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Wuthering Heights</h3>
+                        <p class="text-gray-900 mb-4">Author: Emily Brontë</p>
+                        <p class="text-gray-900 text-sm mb-4">Price: $12.99</p>
+                        <p class="text-gray-600 text-sm mb-8">A tale of passion and revenge on the Yorkshire moors, centering on the tumultuous relationship between Heathcliff and Catherine.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/count.png" alt="The Count of Monte Cristo Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">The Count of Monte Cristo</h3>
+                        <p class="text-gray-900 mb-4">Author: Alexandre Dumas</p>
+                        <p class="text-gray-900 text-sm mb-4">Price: $15.99</p>
+                        <p class="text-gray-600 text-sm mb-8">A story of betrayal, revenge, and redemption, following Edmond Dantès as he seeks vengeance against those who wronged him.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/othello.png" alt="Othello Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Othello</h3>
+                        <p class="text-gray-900 mb-4">Author: William Shakespeare</p>
+                        <p class="text-gray-900 text-sm mb-4">Price: $9.99</p>
+                        <p class="text-gray-600 text-sm mb-8">A tragic tale of jealousy and betrayal, focusing on the downfall of Othello, a Moorish general in Venice.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/things.png" alt="Things Fall Apart Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Things Fall Apart</h3>
+                        <p class="text-gray-900 mb-4">Author: Chinua Achebe</p>
+                        <p class="text-gray-900 text-sm mb-4">Price: $10.99</p>
+                        <p class="text-gray-600 text-sm mb-8">A powerful story of colonialism in Africa, depicting the life of Okonkwo and the impact of British rule.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/why.png" alt="Why You Act The Way You Do Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Why You Act The Way You Do</h3>
+                        <p class="text-gray-900 mb-4">Author: Tim Clinton</p>
+                        <p class="text-gray-900 text-sm mb-4">Price: $14.99</p>
+                        <p class="text-gray-600 text-sm mb-8">An insightful look into the psychological factors that influence behavior and relationships.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/shadow.png" alt="Shadow Slave Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Shadow Slave</h3>
+                        <p class="text-gray-900 mb-4">Author: GuiltyThree</p>
+                        <p class="text-gray-900 text-sm mb-4">Price: $11.99</p>
+                        <p class="text-gray-600 text-sm mb-8">A captivating fantasy tale where the protagonist grapples with dark powers and the quest for freedom.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/power.png" alt="Power Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Power</h3>
+                        <p class="text-gray-900 mb-4">Author: Jeffrey Pfeffer</p>
+                        <p class="text-gray-900 text-sm mb-4">Price: $19.99</p>
+                        <p class="text-gray-600 text-sm mb-8">An exploration of how power dynamics work in organizations and how to navigate them effectively.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/vampire.png" alt="My Vampire System Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">My Vampire System</h3>
+                        <p class="text-gray-900 mb-4">Author: JksManga</p>
+                        <p class="text-gray-900 text-sm mb-4">Price: $8.99</p>
+                        <p class="text-gray-600 text-sm mb-8">A thrilling fantasy adventure where the protagonist navigates a world filled with vampires, magic, and perilous challenges.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/alchemist.png" alt="The Alchemist Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">The Alchemist</h3>
+                        <p class="text-gray-900 mb-4">Author: Paulo Coelho</p>
+                        <p class="text-gray-900 text-sm mb-4">Price: $13.99</p>
+                        <p class="text-gray-600 text-sm mb-8">A philosophical tale about a young shepherd named Santiago who embarks on a journey to discover his personal legend and the true meaning of life.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/night.png" alt="The Night Circus Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">The Night Circus</h3>
+                        <p class="text-gray-900 mb-4">Author: Erin Morgenstern</p>
+                        <p class="text-gray-900 text-sm mb-4">Price: $16.99</p>
+                        <p class="text-gray-600 text-sm mb-8">A mesmerizing fantasy about a magical competition between two young illusionists, set within a mysterious circus that appears only at night.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="max-w-sm rounded-lg overflow-hidden shadow-xl bg-white transition-transform duration-300 hover:shadow-2xl menu-item">
+                    <img class="object-cover w-full h-48" src="img/silent.png" alt="The Silent Patient Book Cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">The Silent Patient</h3>
+                        <p class="text-gray-900 mb-4">Author: Alex Michaelides</p>
+                        <p class="text-gray-900 text-sm mb-4">Price: $18.99</p>
+                        <p class="text-gray-600 text-sm mb-8">A gripping psychological thriller about a woman who shoots her husband and then stops speaking, unraveling the mystery behind her silence through the eyes of her therapist.</p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 btn-add">Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <div id="search-results"></div>
+        
+
+        <footer class="gradient-bg text-white p-4 mt-8 shadow-2xl">
+            <div class="container mx-auto text-center">
+                <p>&copy; 2024 LiBrain. All rights reserved.</p>
+                <div class="flex justify-center space-x-4 text-blue-700">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
