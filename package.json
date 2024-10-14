@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "prebuild": "chmod +x ./node_modules/.bin/tailwindcss",
     "build": "npx tailwindcss -i ./css/input.css -o ./css/style.css"
   },
   "author": "",
@@ -99,5 +98,8 @@
     "wrap-ansi-cjs": "^7.0.0",
     "yaml": "^2.5.1"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
+  }
 }
