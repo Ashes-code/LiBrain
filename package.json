@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./css/input.css -o ./css/style.css"
+    "build": "npx tailwindcss -i ./css/input.css -o ./css/style.css",
+    "vercel-build": "npm run build"
   },
   "author": "",
   "license": "ISC",
